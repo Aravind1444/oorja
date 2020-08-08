@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
+import 'package:firebase_database/firebase_database.dart';
 
 void main() => runApp(Complaints());
 
 class Complaints extends StatelessWidget {
+  //final DBRef = FireBaseDataBase.instance.reference();
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -50,19 +52,18 @@ class TransfterDataWidget extends State {
     String personal = personalController.text;
 
     // API URL
-    var url =
-        'https://firebasestorage.googleapis.com/v0/b/oorja-c06f7.appspot.com/o/submit_data.php?alt=media&token=4c7ce1ac-a74c-4121-8b65-487e5296ba7a';
+    var url = 'https://paduoweb.000webhostapp.com/submit_data.php';
 
     // Store all data with Param Name.
-    var dataKey;
-    var data = dataKey[{
+//    var dataKey;
+    var data = {
       'name': name,
       'phone': phone,
       'consumernumber': consumerNumber,
       'issue': issue,
       'location': location,
       'personal': personal
-    }];
+    };
 
     // Starting Web Call with data.
     var response = await http.post(url, body: json.encode(data));

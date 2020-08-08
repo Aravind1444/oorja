@@ -23,7 +23,7 @@ class _MyAppState extends State<MyApp> {
     super.initState();
     Future.delayed(
       Duration(seconds: 3),
-          () {
+      () {
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(
@@ -37,15 +37,30 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.white,
-        child: Center(
-          child: Image(
-            height: double.maxFinite,
-            image: AssetImage('images/oorja.png'),
-          ),
+        body: Center(
+            child: Container(
+      constraints: BoxConstraints.expand(),
+      decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage('images/sponebg.png'), fit: BoxFit.cover)),
+
+      //adding overlay buttons
+
+      child: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              color: Colors.white,
+              child: Center(
+                child: Image(
+                  image: AssetImage('images/spone.png'),
+                ),
+              ),
+            ),
+          ],
         ),
       ),
-    );
+    )));
   }
 }

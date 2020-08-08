@@ -166,10 +166,10 @@ class _HomeState extends State<Home> {
                     width: double.infinity,
                     child: Carousel(
                       images: [
-                        AssetImage('images/oorja.png'),
-                        AssetImage('images/oorja.png'),
-                        AssetImage('images/oorja.png'),
-                        AssetImage('images/oorja.png'),
+                        AssetImage('images/cone.png'),
+                        AssetImage('images/ctwo.png'),
+                        AssetImage('images/cthree.png'),
+                        AssetImage('images/cfour.png'),
                       ],
                       showIndicator: false,
                       indicatorBgPadding: 3,
