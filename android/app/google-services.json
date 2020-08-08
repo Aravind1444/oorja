@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "808046557671",
+    "firebase_url": "https://oorja-c06f7.firebaseio.com",
+    "project_id": "oorja-c06f7",
+    "storage_bucket": "oorja-c06f7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:808046557671:android:149b3b7bfc64700e886542",
+        "android_client_info": {
+          "package_name": "me.aravind.oorja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "808046557671-3u8m7ctmgr8l918n93qshamrlb39h7dn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "me.aravind.oorja",
+            "certificate_hash": "df1ea842d487103e17eccede691d0708f0e42349"
+          }
+        },
+        {
+          "client_id": "808046557671-01psi72ifl39tj8av7btlsn93o9jtpkc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyByWcR3fAGCPlv49QT6vpeSZYLiNiZLVoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "808046557671-01psi72ifl39tj8av7btlsn93o9jtpkc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
