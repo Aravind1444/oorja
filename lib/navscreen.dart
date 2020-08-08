@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:oorja/complaints.dart';
+import 'package:oorja/settings.dart';
 
 import 'home.dart';
+import 'more.dart';
+import 'notifications.dart';
 
 void main() => runApp(Navscreen());
 
@@ -87,7 +90,7 @@ class _NavscreenState extends State<Navscreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Home(),
+                      builder: (context) => Notifications(),
                     ),
                   );
                 },
@@ -104,7 +107,7 @@ class _NavscreenState extends State<Navscreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Home(),
+                      builder: (context) => Settings(),
                     ),
                   );
                 },
@@ -120,7 +123,7 @@ class _NavscreenState extends State<Navscreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Home(),
+                      builder: (context) => Settings(),
                     ),
                   );
                 },
@@ -137,7 +140,7 @@ class _NavscreenState extends State<Navscreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Home(),
+                      builder: (context) => More(),
                     ),
                   );
                 },

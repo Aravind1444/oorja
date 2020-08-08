@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:oorja/settings.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'complaints.dart';
 import 'home.dart';
+import 'notifications.dart';
 
 class More extends StatefulWidget {
   @override

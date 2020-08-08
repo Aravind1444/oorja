@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:oorja/complaints.dart';
 import 'package:oorja/notifications.dart';
+import 'package:oorja/settings.dart';
 import 'complaints.dart';
 //import 'package:carousel_slider/carousel_slider.dart';
 import 'package:carousel_pro/carousel_pro.dart';
+
+import 'more.dart';
 
 void main() => runApp(Home());
 
@@ -73,9 +76,6 @@ class _HomeState extends State<Home> {
                       builder: (context) => Complaints(),
                     ),
                   );
-                  //createInterstitialAd()
-                  // ..load()
-                  // ..show();
                 },
               ),
             ),
@@ -106,7 +106,7 @@ class _HomeState extends State<Home> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Home(),
+                      builder: (context) => Settings(),
                     ),
                   );
                 },
@@ -122,7 +122,7 @@ class _HomeState extends State<Home> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Home(),
+                      builder: (context) => Settings(),
                     ),
                   );
                 },
@@ -139,7 +139,7 @@ class _HomeState extends State<Home> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Home(),
+                      builder: (context) => More(),
                     ),
                   );
                 },
@@ -148,6 +148,7 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
+      backgroundColor: Colors.white,
       body: SingleChildScrollView(
         child: Column(
           children: <Widget>[
@@ -184,16 +185,116 @@ class _HomeState extends State<Home> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 10,
+            ),
+            Container(
+              color: Colors.white,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  GestureDetector(
+                    onTap: () async {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Settings(),
+                        ),
+                      );
+                    },
+                    child: Column(
+                      children: <Widget>[
+                        Card(
+                          elevation: 5,
+                          margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                          child: Icon(
+                            Icons.monetization_on,
+                            size: 65,
+                          ),
+                        ),
+                        Text('Rewards'),
+                      ],
+                    ),
+                  ),
+                  GestureDetector(
+                      onTap: () async {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Settings(),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        children: <Widget>[
+                          Card(
+                            elevation: 5,
+                            margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                            child: Icon(
+                              Icons.nature_people,
+                              size: 65,
+                            ),
+                          ),
+                          Text('green-E'),
+                        ],
+                      )),
+                  GestureDetector(
+                      onTap: () async {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Settings(),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        children: <Widget>[
+                          Card(
+                            elevation: 5,
+                            margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                            child: Icon(
+                              Icons.explore,
+                              size: 65,
+                            ),
+                          ),
+                          Text('Explore'),
+                        ],
+                      )),
+                  GestureDetector(
+                      onTap: () async {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => Settings(),
+                          ),
+                        );
+                      },
+                      child: Column(
+                        children: <Widget>[
+                          Card(
+                            elevation: 5,
+                            margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
+                            child: Icon(
+                              Icons.chat,
+                              size: 65,
+                            ),
+                          ),
+                          Text('Chat'),
+                        ],
+                      )),
+                ],
+              ),
+            ),
             Container(
               width: double.infinity,
               color: Colors.white,
               child: Padding(
-                  padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
+                  padding: EdgeInsets.fromLTRB(10, 15, 10, 10),
                   child: Text(
                     'Updates',
                     style: TextStyle(
                         color: Colors.black,
-                        fontSize: 22,
+                        fontSize: 25,
                         fontWeight: FontWeight.bold),
                   )),
             ),
@@ -201,7 +302,7 @@ class _HomeState extends State<Home> {
               onTap: () async {},
               child: Card(
                 elevation: 5,
-                margin: EdgeInsets.fromLTRB(10, 5, 5, 5),
+                margin: EdgeInsets.fromLTRB(10, 5, 10, 5),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
@@ -228,7 +329,7 @@ class _HomeState extends State<Home> {
               onTap: () async {},
               child: Card(
                 elevation: 5,
-                margin: EdgeInsets.fromLTRB(10, 5, 5, 0),
+                margin: EdgeInsets.fromLTRB(10, 5, 10, 0),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[

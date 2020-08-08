@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:oorja/home.dart';
 import 'dart:math';
 
 import 'package:oorja/navscreen.dart';
@@ -360,7 +361,7 @@ class _ContentCardState extends State<ContentCard> {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => GestureDetector(),
+                                builder: (context) => Navscreen(),
                               ),
                             );
                           },
