@@ -28,10 +28,11 @@ class GooeyCarousel extends StatefulWidget {
   GooeyCarousel({this.children}) : super();
 
   @override
-  GooeyCarouselState createState () => GooeyCarouselState();
+  GooeyCarouselState createState() => GooeyCarouselState();
 }
 
-class GooeyCarouselState extends State<GooeyCarousel> with SingleTickerProviderStateMixin {
+class GooeyCarouselState extends State<GooeyCarousel>
+    with SingleTickerProviderStateMixin {
   int _index = 0; // index of the base (bottom) child
   int _dragIndex; // index of the top child
   Offset _dragOffset; // starting offset of the drag
@@ -52,19 +53,27 @@ class GooeyCarouselState extends State<GooeyCarousel> with SingleTickerProviderS
   void initState() {
     _edge = GooeyEdge(count: 25);
     _ticker = createTicker(_tick)..start();
-    _blueImage = Image.network('https://firebasestorage.googleapis.com/v0/b/vgv-flutter-vignettes.appspot.com/o/gooey_edge%2FIllustration-Blue.png?alt=media&token=7a55c1fc-0cb1-4f98-bafd-81780cd42775',);
-    _redImage = Image.network('https://firebasestorage.googleapis.com/v0/b/vgv-flutter-vignettes.appspot.com/o/gooey_edge%2FIllustration-Red.png?alt=media&token=69eef39d-b806-49c1-943c-1e5c5173859a',);
-    _yellowImage = Image.network('https://firebasestorage.googleapis.com/v0/b/vgv-flutter-vignettes.appspot.com/o/gooey_edge%2FIllustration-Yellow.png?alt=media&token=bcd5498e-8745-43a4-8938-d9fc69d58b49',);
+    _blueImage = Image.network(
+      'https://firebasestorage.googleapis.com/v0/b/oorja-c06f7.appspot.com/o/gtwo.png?alt=media&token=d0c63d54-682d-4009-84b6-ecf05fecb4c9',
+    );
+    _redImage = Image.network(
+      'https://firebasestorage.googleapis.com/v0/b/oorja-c06f7.appspot.com/o/gthree.png?alt=media&token=acee6c94-78b5-431c-b53c-61682009201f',
+    );
+    _yellowImage = Image.network(
+      'https://firebasestorage.googleapis.com/v0/b/oorja-c06f7.appspot.com/o/gone.png?alt=media&token=26812cc4-6c29-42de-af10-cde99b2eb057',
+    );
     _blueBg = Image.network(
-      'https://firebasestorage.googleapis.com/v0/b/vgv-flutter-vignettes.appspot.com/o/gooey_edge%2FBg-Blue.png?alt=media&token=e00eaf19-3a5f-4133-a0f7-68ab7afe95ab',
-      fit: BoxFit.cover,);
+      'https://firebasestorage.googleapis.com/v0/b/oorja-c06f7.appspot.com/o/Bg-Blue.png?alt=media&token=2b9dff62-234a-4d5c-8f8f-6a607230303a',
+      fit: BoxFit.cover,
+    );
     _yellowBg = Image.network(
-      'https://firebasestorage.googleapis.com/v0/b/vgv-flutter-vignettes.appspot.com/o/gooey_edge%2FBg-Yellow.png?alt=media&token=a012c201-a8a4-4ec2-854c-acc92c291113',
-      fit: BoxFit.cover,);
+      'https://firebasestorage.googleapis.com/v0/b/oorja-c06f7.appspot.com/o/Bg-Yellow.png?alt=media&token=a22f5cd5-3750-4364-aeec-a3981f70a27e',
+      fit: BoxFit.cover,
+    );
     _redBg = Image.network(
-      'https://firebasestorage.googleapis.com/v0/b/vgv-flutter-vignettes.appspot.com/o/gooey_edge%2FBg-Red.png?alt=media&token=bc44fec1-89fd-41d3-baca-85fadad5e5f0',
-      fit: BoxFit.cover,);
-
+      'https://firebasestorage.googleapis.com/v0/b/oorja-c06f7.appspot.com/o/Bg-Red.png?alt=media&token=e363b3ea-5d39-4d37-b426-e6540e61fe60',
+      fit: BoxFit.cover,
+    );
 
     super.initState();
   }
@@ -104,10 +113,10 @@ class GooeyCarouselState extends State<GooeyCarousel> with SingleTickerProviderS
             _dragIndex == null
                 ? SizedBox()
                 : ClipPath(
-              child: cards(_dragIndex % 3),
-              clipBehavior: Clip.hardEdge,
-              clipper: GooeyEdgeClipper(_edge, margin: 10.0),
-            ),
+                    child: cards(_dragIndex % 3),
+                    clipBehavior: Clip.hardEdge,
+                    clipper: GooeyEdgeClipper(_edge, margin: 10.0),
+                  ),
           ],
         ));
   }
@@ -238,11 +247,13 @@ class _ContentCardState extends State<ContentCard> {
       ..start();
     super.initState();
   }
+
   @override
   void dispose() {
     _ticker.dispose();
     super.dispose();
   }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -257,22 +268,23 @@ class _ContentCardState extends State<ContentCard> {
         Transform(
           transform: Matrix4.diagonal3Values(scaleX, scaleY, 1),
           child: Transform.translate(
-            offset: Offset(-(scaleX - 1) / 2 * size.width, -(scaleY - 1) / 2 * size.height + offsetY),
+            offset: Offset(-(scaleX - 1) / 2 * size.width,
+                -(scaleY - 1) / 2 * size.height + offsetY),
             child: widget.background,
           ),
         ),
         Container(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Expanded(
-                    child: Container(
-                      child: widget.image,
-                      padding: EdgeInsets.symmetric(horizontal: 20),
-                    )),
-                _buildPageIndicator(this.widget.index),
-              ],
-            ))
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Expanded(
+                child: Container(
+              child: widget.image,
+              padding: EdgeInsets.symmetric(horizontal: 20),
+            )),
+            _buildPageIndicator(this.widget.index),
+          ],
+        ))
       ],
     );
   }
@@ -296,10 +308,10 @@ class _ContentCardState extends State<ContentCard> {
                             child: Text(
                               "SKIP",
                               textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 20, color: Colors.white),
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white),
                             ),
-                            padding: EdgeInsets.fromLTRB(0,5,0,5),
+                            padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
                             color: Colors.black,
                           ),
                           onTap: () {
@@ -314,8 +326,7 @@ class _ContentCardState extends State<ContentCard> {
                         borderRadius: BorderRadius.circular(5),
                       ),
                     ),
-                  ]
-              ),
+                  ]),
             ),
             _indicator(0),
             SizedBox(
@@ -339,10 +350,10 @@ class _ContentCardState extends State<ContentCard> {
                             child: Text(
                               "NEXT",
                               textAlign: TextAlign.center,
-                              style: TextStyle(
-                                  fontSize: 20, color: Colors.white),
+                              style:
+                                  TextStyle(fontSize: 20, color: Colors.white),
                             ),
-                            padding: EdgeInsets.fromLTRB(0,5,0,5),
+                            padding: EdgeInsets.fromLTRB(0, 5, 0, 5),
                             color: Colors.black,
                           ),
                           onTap: () {
@@ -357,18 +368,15 @@ class _ContentCardState extends State<ContentCard> {
                         borderRadius: BorderRadius.circular(5),
                       ),
                     ),
-
-                  ]
-              ),
+                  ]),
             ),
           ],
-        )
-    );
+        ));
   }
 
   Widget _indicator(int idx) {
     BoxDecoration _selected =
-    BoxDecoration(color: Colors.white, shape: BoxShape.circle);
+        BoxDecoration(color: Colors.white, shape: BoxShape.circle);
     BoxDecoration _unselected = BoxDecoration(
       border: Border.all(color: Colors.white),
       shape: BoxShape.circle,
@@ -473,7 +481,7 @@ class GooeyEdge {
       pt.velX += (1.0 - pt.x) * farEdgeTension * t;
       if (touchOffset != null) {
         double ratio =
-        max(0.0, 1.0 - (pt.y - touchOffset.dy).abs() / maxTouchDistance);
+            max(0.0, 1.0 - (pt.y - touchOffset.dy).abs() / maxTouchDistance);
         pt.velX += (touchOffset.dx - pt.x) * touchTension * ratio * t;
       }
       if (i > 0) {
@@ -554,4 +562,3 @@ class GooeyEdgeClipper extends CustomClipper<Path> {
     return true;
   }
 }
-
