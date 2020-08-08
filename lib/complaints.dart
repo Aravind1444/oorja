@@ -51,17 +51,18 @@ class TransfterDataWidget extends State {
 
     // API URL
     var url =
-        'https://firebasestorage.googleapis.com/v0/b/oorja-c06f7.appspot.com/o/submit_data.php';
+        'https://firebasestorage.googleapis.com/v0/b/oorja-c06f7.appspot.com/o/submit_data.php?alt=media&token=4c7ce1ac-a74c-4121-8b65-487e5296ba7a';
 
     // Store all data with Param Name.
-    var data = {
+    var dataKey;
+    var data = dataKey[{
       'name': name,
       'phone': phone,
       'consumernumber': consumerNumber,
       'issue': issue,
       'location': location,
       'personal': personal
-    };
+    }];
 
     // Starting Web Call with data.
     var response = await http.post(url, body: json.encode(data));
