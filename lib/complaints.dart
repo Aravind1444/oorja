@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:http/http.dart' as http;
-import 'package:firebase_database/firebase_database.dart';
+import 'package:oorja/settings.dart';
+
+import 'home.dart';
+import 'more.dart';
+import 'notifications.dart';
 
 void main() => runApp(Complaints());
 
@@ -11,11 +15,134 @@ class Complaints extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+          drawer: Drawer(
+            child: ListView(
+              // Important: Remove any padding from the ListView.
+              padding: EdgeInsets.zero,
+              children: <Widget>[
+                DrawerHeader(
+                  child: Padding(
+                    padding: EdgeInsets.fromLTRB(0, 15, 5, 10),
+                    child: Text(
+                      'Sample Account',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 25,
+                      ),
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    color: Colors.black,
+                  ),
+                ),
+                Container(
+                  child: ListTile(
+                    title: Text(
+                      'Home',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Home(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Container(
+                  color: Colors.white,
+                  child: ListTile(
+                    title: Text(
+                      'Complaints',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Complaints(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Container(
+                  child: ListTile(
+                    title: Text(
+                      'Notifications',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Notifications(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Container(
+                  color: Colors.white,
+                  child: ListTile(
+                    title: Text(
+                      'Billing',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Settings(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Container(
+                  child: ListTile(
+                    title: Text(
+                      'Settings',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Settings(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+                Container(
+                  color: Colors.white,
+                  child: ListTile(
+                    title: Text(
+                      'More',
+                      style: TextStyle(fontSize: 18),
+                    ),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => More(),
+                        ),
+                      );
+                    },
+                  ),
+                ),
+              ],
+            ),
+          ),
           appBar: AppBar(
+              backgroundColor: Colors.black,
               title: Text(
-            'Complaints',
-            style: TextStyle(fontSize: 20),
-          )),
+                'Complaints',
+                style: TextStyle(fontSize: 20),
+              )),
           body: Center(child: TransfterData())),
     );
   }
@@ -103,10 +230,13 @@ class TransfterDataWidget extends State {
             child: Center(
       child: Column(
         children: <Widget>[
+          SizedBox(
+            height: 20,
+          ),
           Padding(
               padding: const EdgeInsets.all(12.0),
-              child:
-                  Text('Register Complaint', style: TextStyle(fontSize: 22))),
+              child: Text('Register Complaint',
+                  style: TextStyle(fontSize: 27, fontWeight: FontWeight.bold))),
           Container(
               width: 350,
               padding: EdgeInsets.all(10.0),
