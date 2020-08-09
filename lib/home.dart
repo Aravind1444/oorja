@@ -359,7 +359,7 @@ class _HomeState extends State<Home> {
               child: Padding(
                   padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
                   child: Text(
-                    "Get access to your billing, complaints or ongoing requets",
+                    "Get access to your billing, complaints or ongoing requets with just one touch : \n",
                     style: TextStyle(
                       color: Colors.black.withOpacity(0.8),
                       fontSize: 16,
@@ -421,12 +421,9 @@ class _HomeState extends State<Home> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Home(),
+                                  builder: (context) => Settings(),
                                 ),
                               );
-                              // createInterstitialAd()
-                              //  ..load()
-                              //  ..show();
                             },
                           ),
                           borderRadius: BorderRadius.circular(5),
@@ -485,7 +482,7 @@ class _HomeState extends State<Home> {
                               Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Home(),
+                                  builder: (context) => Settings(),
                                 ),
                               );
                               //createInterstitialAd()
